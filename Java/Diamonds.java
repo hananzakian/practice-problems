@@ -1,6 +1,8 @@
 public class Diamonds {
     public static void main(String[] args) {
 
+        // Problem link: https://www.codewars.com/kata/5503013e34137eeeaa001648
+
         int n = 5;
 
         // Bentuk langsung print
