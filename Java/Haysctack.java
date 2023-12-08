@@ -1,23 +1,43 @@
+// Problem link: https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/
+
 public class Haysctack {
     public static void main(String[] args) {
-        String x = "sambutsad";
-        String y = "sad";
 
+        String x = "skibbidis";
+        String y = "idis";
+
+        System.out.println(haystack(x, y));
+        haystackExpl(x, y);
+    }
+    public static int haystack(String x, String y){
+        int sum = 0;
+
+        for (int i = 0; i < x.length(); i++) {
+            sum = 0;
+            for (int j = 0; j < y.length(); j++) {
+
+                if (x.charAt(i + j) == y.charAt(j)) {
+                    sum++;
+                } else { break; }
+
+                if (sum == y.length()) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+
+    public static void haystackExpl(String x, String y){
         int sum = 0;
 
         loop1:
         for (int i = 0; i < x.length(); i++) {
-
-            sum = 0; // diletakkan di sini karena untuk reset (jadi tiap perulangan i, sum di-reset)
-
+            sum = 0;
             for (int j = 0; j < y.length(); j++) {
 
-                // ini buat batas
-                if (i+j == x.length()){
-                    break loop1;
-                }
-
                 if (x.charAt(i + j) == y.charAt(j)) {
+                    System.out.print(i + j + " == " + j + " | ");
                     System.out.println(x.charAt(i + j) + "=" + y.charAt(j));
                     sum++;
                 } else {
@@ -25,53 +45,14 @@ public class Haysctack {
                 }
 
                 if (sum == y.length()) {
-//                    System.out.println(sum);
-                    System.out.println("Yes");
-                    System.out.println(i);
+                    System.out.println("True = " + sum);
                     break loop1;
                 }
             }
         }
 
         if (!(sum == y.length())){
-            System.out.println(-1);
+            System.out.println("False = " + sum);
         }
-
-        System.out.println(strStr("hello", "hell"));
-    }
-
-    public static int strStr(String haystack, String needle){
-        int sum = 0;
-
-        loop1:
-        for (int i = 0; i < haystack.length(); i++) {
-
-            sum = 0; // diletakkan di sini karena untuk reset (jadi tiap perulangan i, sum di-reset)
-
-            for (int j = 0; j < needle.length(); j++) {
-
-                // ini buat batas
-                if (i+j == haystack.length()){
-                    break loop1;
-                }
-
-                if (haystack.charAt(i + j) == needle.charAt(j)) {
-                    sum++;
-                } else {
-                    break;
-                }
-
-                if (sum == needle.length()) {
-                    return i;
-                }
-            }
-        }
-
-        if (!(sum == needle.length())){
-            return -1;
-        }
-
-        return 0;
     }
 }
-
