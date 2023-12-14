@@ -1,3 +1,5 @@
+// Problem's link: https://www.codewars.com/kata/554e4a2f232cdd87d9000038
+
 public class DnaStrand {
     public static void main(String[] args) {
 
