@@ -4,6 +4,8 @@ public class Matches {
 
         System.out.println(numberOfMatches(7));
 
+        System.out.println(numberOfMatchesRec(14));
+
     }
     public static int numberOfMatches(int team) {
 
@@ -19,5 +21,15 @@ public class Matches {
         }
 
         return tot_match;
+    }
+
+    public static int numberOfMatchesRec(int team) {
+
+        if (team == 1) {
+            return 0;
+        }
+
+        return (team/2) + numberOfMatchesRec((team/2) + (team%2));
+
     }
 }
