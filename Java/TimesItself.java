@@ -1,9 +1,10 @@
 public class TimesItself {
+
     public static void main(String[] args) {
+
         System.out.println(times(219));
 
         System.out.println(timesRec(219));
-//        System.out.println(timesRec2(10));
     }
 
     public static int times(int n) {
@@ -27,7 +28,7 @@ public class TimesItself {
         if (n / 10 == 0) {
             return n;
         }
-        return (n % 10) * timesRec((n - (n % 10))/10);
 
+        return (n % 10) * timesRec((n - (n % 10))/10);
     }
 }
