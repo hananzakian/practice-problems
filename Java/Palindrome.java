@@ -2,6 +2,8 @@ public class Palindrome {
     public static void main(String[] args) {
 
         System.out.println(isPalindrome("tebak"));
+
+        System.out.println(isPalindromeRec("KotakkatoK"));
     }
     
     public static boolean isPalindrome(String string) {
@@ -21,6 +23,16 @@ public class Palindrome {
             return true;
         }
 
+        return false;
+    }
+
+    public static boolean isPalindromeRec(String s) {
+        if (s.length() == 0 || s.length() == 1) { // base case
+            return true;
+        } else if (s.charAt(0) == s.charAt(s.length()-1)) {
+            String x = s.substring(1, s.length() - 1); // recursive case
+            return true && isPalindromeRec(x);
+        }
         return false;
     }
 }
