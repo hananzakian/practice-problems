@@ -6,5 +6,3 @@ def min_inequity(salaries, n):
     return result
 
 print(min_inequity([60000, 80000, 120000, 70000], 3))
-
-print("Hello World")
